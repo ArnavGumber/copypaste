@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CopyPaste.js</title>
+    <style>
+        #header {
+            font-size: 200%;
+            margin: 10px;
+        }
+
+        #code {
+            font-size: 200%;
+            width: 75%;
+        }
+
+        #copyBtn {
+            font-size: 200%;
+            padding: 0 20px 0 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <div id="header">CopyPaste.js</div>
+        <hr style="width: 40%;">
+        <br><br>
+        <h1>Copy-paste this code after the body tag to use <i>copypaste.js</i>:</h1>
+        <input type="text" id="code" value="https://arnavgumber.github.io/copypaste/copypaste.js">
+        <br><br>
+        <button id="copyBtn" onclick="copy()">Copy</button>
+        <br><br><br>
+        <h1>How to use:</h1>
+        <h2 style="font-weight: 100;margin-right: 100px;">To copy :</h2>
+        <p style="font-size: 200%;"><i>&#60;button onclick="cp1('<sub>{id of the input or textarea}</sub>')"&#62;</i></p>
+        <br>
+        <h2 style="font-weight: 100;margin-right: 100px;">To paste :</h2>
+        <p style="font-size: 200%;"><i>&#60;button onclick="cp2('<sub>{id of the input or textarea in which you have to paste text}</sub>')"&#62;</i></p>
+        <h3><a href="test.html">See demo</a></h3>
+    </center>
+    <script>
+        function copy() {
+            let code = document.getElementById("code");
+            code.select();
+            document.execCommand("copy");
+            document.getElementById("copyBtn").innerHTML = "Copied";
+        }
+    </script>
+</body>
+
+</html>
